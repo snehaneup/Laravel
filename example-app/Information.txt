@@ -1,0 +1,1 @@
+php artisan serve: Serve the application on the php development server.
