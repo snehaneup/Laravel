@@ -7,6 +7,11 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+
+    public function addProduct(Request $request){
+        return $request->all();
+    }
+    
     /**
      * Display a listing of the resource.
      */

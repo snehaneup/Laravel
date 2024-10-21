@@ -32,4 +32,44 @@ relationships
 name route
 
 
+Naming convention:
+Variables - $users
+Properties - $this->title
+Controller - UserController
+Model - Product
+Database Tables: product, product_name
+primary key - id
+foreign key - user_id
 
+
+Named routes:
+named routes can be used to specify a name of the route with the method "name". Syntax:
+Route::get('/user/profile', function () {
+    // ...
+})->name('profile');
+it can be used in html files too under anchor tag like this: {{ route('profile') }} 
+
+Routes redirection:
+We can redirect the route from one url to other. Syntax:
+Route::redirect('/about','/test',301) -> it redirects from about url to test url and 301 is the code to implement this redirection permanently and there are other code like this for redirection.
+
+Route Groups:
+Used to create group route in which other multiple routes can be created using "group" method.
+
+Fallback Method: 
+Used to show the created page by user instead of laravel's 404 not found user. Syntax:
+Route::fallback(function () {
+       return "<h1>Page Not Found.</h1>";
+});
+
+
+Form Requests:
+
+If there are many fields in form then, the controller file will be complex as we will have to do all validation process in that one file so in this case we use form request. In this process, we can create our own request class. Syntax:
+php artisan make:request ProductRequest(app/Http/Requests)
+We will have in-built method called "rules" which is an public function so we write all the validation rules in this function. We can use this class in controller. For that, we have to create method and mention the request's name in there also we can create variable(called object) such as $request which helps us to process the data of the form and store or show the data in database -> return $req->all();
+
+
+categories
+blocks 
+polymorphic relationships use garera comment store hune
