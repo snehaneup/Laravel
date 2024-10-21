@@ -31,5 +31,22 @@ form request
 relationships
 name route
 
+categories
+blocks
+polymorphism relationships with comments
 
+
+Eloquent One-to-one:
+
+tables: students and contacts. student_id foreign key in contacts table
+so now we need models for both the tables. in students table we only need to create a function:
+public function contact(){
+    return $this->hasOne(Contact::class,'foreign_key','local_key');
+}
+and in it's controller file:
+public function show(){
+    $students = Student::with('contact')->get();
+    return $students;
+}
+yo funtion ma use vako 'contact' vaneko chai model ma banako function ho
 
