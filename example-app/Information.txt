@@ -1,1 +1,35 @@
-php artisan serve: Serve the application on the php development server.
+- To create a project: composer create-project laravel/laravel:^10.0 example-app
+- php artisan serve: Serve the application on the php development server.
+- To find something in vs code: ctrl+shift+F
+- Git: git init
+       git add .
+       git commit -m "Message"
+       git push
+- Blade file ko content return garnu xa vane - return view(it is a global function) use garinxa
+- .blade.php file is for view.
+- For routing: get, view
+- we need composer.json file to manage the project's dependencies. lists all the packages and dependencies needed for the project.Composer uses this file to download and install the specified versions of each package.
+  Example: If you want to use Laravel, the composer.json file will specify which version of Laravel to install.
+- Breeze package - gives you full authentication in the application
+- env file: responsible for all the configuration of project
+- dashboard- snehaneup@gmail.com, pw-snehaneupane
+- migrations- database schema and each migration file are resposible for one table schema
+- schema- skeleton of the table. what things do we need inside the table
+- timestamps for createdat and updatedat
+- To rename the column name in table: php artisan make:migration update_user_table_name_to_username --table=users. And in the file under Schema users up function, $table->renameColumn('name','username'); Similarly, in down function, $table->renameColumn('username','name');
+We use Schema::create to create the table and Schema::table to update the table
+- Double curly braces are special syntax for blade files (action="{{ route('register') }}") route is a function
+- mvc: view - UI (blade file),
+       controller - control and decides how data will be flowed or will be displayed(app-http-controllers) every controller must extend the base controller from laravel. data will flow from controller to view,
+       model - interacts with the database(app-models) responsible for crud related operations in migrations file, getting the data, if we have book model then it will directly interact with the books table by default(class Book extends Model) and laravel says whatever the name of the model is, the table name of that model should be in plural form(Book and Books) but we can explicitly define the table name in model file too i.e. protected $table = 'my-books'; if we do this then if we use book model, it will interact with my-books table and not books table.
+raw sql queries - for this we use db facade.
+       - we can do this in route files like this: $users = DB::select('select * from users');
+       - DB::insert('insert into users (id, name) values (?, ?)', [1, 'Marc']); this is if we want to insert values and the values should be inserted like this: values (?, ?)', [1, 'Marc']
+       first parameter is ? and second parameter should contain value
+
+form request
+relationships
+name route
+
+
+
