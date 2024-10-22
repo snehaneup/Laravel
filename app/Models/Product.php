@@ -14,8 +14,4 @@ class Product extends Model
         'description',
         'price'
     ];
-
-    public function comment(){
-        return $this->morphOne(Comment::class,'commentable');
-    }
 }
